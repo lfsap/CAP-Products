@@ -1,0 +1,51 @@
+### Get Orders
+GET http://localhost:4004/manage-orders/Orders
+
+### Get Orders
+GET http://localhost:4004/manage-orders/Orders('client2@client2.com')
+
+### Create Orders
+POST http://localhost:4004/manage-orders/Orders HTTP/1.1
+Content-Type: application/json
+
+{
+    "ClientEmail"   : "client5@client5.com",
+    "FirstName"     : "James",
+    "LastName"      : "Ufo",
+    "CreatedOn"     : "2025-01-01"
+}
+
+### Update Orders
+PUT http://localhost:4004/manage-orders/Orders('client5@client5.com') HTTP/1.1
+Content-Type: application/json
+
+{
+    "FirstName"     : "Ralph",
+    "LastName"      : "Ufuito"
+}
+
+### Delete Orders
+DELETE http://localhost:4004/manage-orders/Orders('client5@client5.com')
+
+###GET CLIENT TAX RATE - Function
+GET http://localhost:4004/manage-orders/getClientTaxRate(clientEmail='client3@client3.com')
+
+###CANCEL ORDER  - Action
+POST http://localhost:4004/manage-orders/cancelOrder
+Content-Type: application/json
+
+{
+    "clientEmail"     : "client2@client2.com"
+}
+
+###GET CLIENT TAX RATE - Function Bound
+GET http://localhost:4004/manage-orders/Orders('client1@client1.com')/ManageOrders.getClientTaxRate(clientEmail='client1@client1.com')
+
+
+###CANCEL ORDER  - Action Bound
+POST http://localhost:4004/manage-orders/Orders('client1@client1.com')/ManageOrders.cancelOrder
+Content-Type: application/json
+
+{
+    "clientEmail"     : "client2@client2.com"
+}
