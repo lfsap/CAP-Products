@@ -132,7 +132,7 @@
         }
       }
     },
-      "sapbackend.ZGW_INCIDENTS": {
+      "sapbackend.IncidentsSet": {
       "kind": "entity",
       "@cds.external": true,
       "@cds.persistence.skip": true,
