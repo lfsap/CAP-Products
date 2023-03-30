@@ -6,17 +6,16 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
-    "@graphql-tools/schema": "^9.0.17",
+    "@cap-js/graphql": "^0.3.1",
     "@sap-cloud-sdk/http-client": "^3.0.1",
     "@sap/cds": "^6",
     "@sap/cds-odata-v2-adapter-proxy": "^1.9.20",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
-    "express": "^4",
-    "express-graphql": "^0.12.0",
-    "graphql": "^16.6.0"
+    "express": "^4"
   },
   "devDependencies": {
+    "cds-swagger-ui-express": "^0.6.0",
     "sqlite3": "^5.0.4"
   },
   "scripts": {
@@ -52,6 +51,20 @@
     }
   },
   "cds": {
+    "i18n": {
+      "default_language": "es",
+      "folders": [
+        "_i18n",
+        "i18n",
+        "assets/i18n"
+      ]
+    },
+    "protocols": {
+      "graphql": {
+        "path": "/graphql",
+        "impl": "@cap-js/graphql"
+      }
+    },
     "features": {
       "graphql": true
     },
